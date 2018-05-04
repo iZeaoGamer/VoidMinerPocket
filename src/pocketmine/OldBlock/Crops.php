@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 use pocketmine\event\block\BlockGrowEvent;
 use pocketmine\item\Item;

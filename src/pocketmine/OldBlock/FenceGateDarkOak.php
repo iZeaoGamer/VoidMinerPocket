@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 
 class FenceGateDarkOak extends FenceGate{

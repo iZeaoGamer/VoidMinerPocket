@@ -22,7 +22,7 @@
 /**
  * All Block classes are in here
  */
-namespace pocketmine\block;
+namespace pocketmine\Oldblock;
 
 use pocketmine\entity\Entity;
 use pocketmine\item\enchantment\Enchantment;

@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;

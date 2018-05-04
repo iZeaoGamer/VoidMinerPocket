@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 use pocketmine\event\entity\EntityRegainHealthEvent;
 use pocketmine\item\Item;

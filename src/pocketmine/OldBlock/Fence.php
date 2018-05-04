@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 use pocketmine\item\Tool;
 use pocketmine\math\AxisAlignedBB;

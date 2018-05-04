@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\block;
+namespace pocketmine\Oldblock;
 
 use pocketmine\inventory\AnvilInventory;
 use pocketmine\item\Item;

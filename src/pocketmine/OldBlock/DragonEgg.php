@@ -1,6 +1,6 @@
 <?php
 
-namespace pocketmine\block;
+namespace pocketmine\OldBlock;
 
 class DragonEgg extends Solid {
     
