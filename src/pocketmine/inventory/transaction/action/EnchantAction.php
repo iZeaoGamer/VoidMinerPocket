@@ -22,8 +22,14 @@
 
 declare(strict_types=1);
 
-namespace pocketmine\inventory\transaction;
+namespace pocketmine\inventory\transaction\action;
 
-class TransactionValidationException extends \RuntimeException{
+use pocketmine\Player;
 
+class EnchantAction extends SlotChangeAction{
+
+	public function isValid(Player $source): bool{
+	    //TODO: check this
+		return true; // client-side enchant so we need this
+	}
 }

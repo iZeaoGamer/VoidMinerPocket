@@ -23,8 +23,9 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory\transaction\action;
 
-use pocketmine\inventory\Inventory;
+use pocketmine\event\inventory\InventoryClickEvent;
 use pocketmine\inventory\transaction\InventoryTransaction;
+use pocketmine\inventory\Inventory;
 use pocketmine\item\Item;
 use pocketmine\Player;
 
@@ -89,6 +90,15 @@ class SlotChangeAction extends InventoryAction{
 	 */
 	public function onAddToTransaction(InventoryTransaction $transaction) : void{
 		$transaction->addInventory($this->inventory);
+	}
+
+	public function onPreExecute(Player $source) : bool{
+		$source->getServer()->getPluginManager()->callEvent($ev = new InventoryClickEvent($this->inventory, $source, $this->inventorySlot));
+		if($ev->isCancelled()){
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
