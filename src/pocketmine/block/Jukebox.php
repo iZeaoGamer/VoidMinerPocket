@@ -33,11 +33,11 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\block;
+namespace pocketmine\block;
 
-use CortexPE\item\Record;
-use CortexPE\tile\Jukebox as JukeboxTile;
-use CortexPE\tile\Tile;
+use pocketmine\item\Record;
+use pocketmine\tile\Jukebox as JukeboxTile;
+use pocketmine\tile\Tile;
 use pocketmine\block\Block;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\Solid;
