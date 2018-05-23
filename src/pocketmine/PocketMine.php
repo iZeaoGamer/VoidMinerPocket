@@ -80,8 +80,8 @@ namespace pocketmine {
 	use raklib\RakLib;
 
 	const NAME = "VoidMinerPocket";
-	const VERSION = "1.2";
-	const API_VERSION = "3.0.0-ALPHA12";
+	const VERSION = "1.2.x";
+	const API_VERSION = "4.0.0-ALPHA1";
 	const CODENAME = "Pocket";
 
 	const MIN_PHP_VERSION = "7.2.0";
