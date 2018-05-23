@@ -37,19 +37,31 @@ namespace pocketmine\item;
 
 use pocketmine\block\Block;
 use pocketmine\entity\Entity;
-use pocketmine\item\Minecart as PMMinecart;
+use pocketmine\item\Item;
 use pocketmine\math\Vector3;
 use pocketmine\Player;
 
-class Minecart extends PMMinecart {
-	public function onActivate(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector): bool{
-		$level = $player->getLevel();
-		$entity = Entity::createEntity(Entity::MINECART, $level, Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5)));
+class EndCrystal extends Item {
+	public function __construct($meta = 0, $count = 1){
+		parent::__construct(Item::END_CRYSTAL, $meta, "Ender Crystal");
+	}
 
-		$entity->spawnToAll();
-		if($player->isSurvival()){
-			$this->count--;
+	public function getMaxStackSize(): int{
+		return 64;
+	}
+
+	public function onActivate(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector): bool{
+		if(in_array($blockClicked->getId(), [Block::OBSIDIAN, Block::BEDROCK])){
+			$nbt = Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5));
+			$crystal = Entity::createEntity("EnderCrystal", $player->getLevel(), $nbt);
+			if($crystal instanceof \CortexPE\entity\object\EndCrystal){
+				$crystal->spawnToAll();
+				if($player->isSurvival()){
+					--$this->count;
+				}
+			}
 		}
+
 		return true;
 	}
 }

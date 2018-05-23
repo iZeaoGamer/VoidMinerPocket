@@ -35,21 +35,46 @@ declare(strict_types = 1);
 
 namespace pocketmine\item;
 
-use pocketmine\block\Block;
-use pocketmine\entity\Entity;
-use pocketmine\item\Minecart as PMMinecart;
-use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\item\Item;
 
-class Minecart extends PMMinecart {
-	public function onActivate(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector): bool{
-		$level = $player->getLevel();
-		$entity = Entity::createEntity(Entity::MINECART, $level, Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5)));
+class Record extends Item {
+	public function __construct(int $id, int $meta = 0, string $name){
+		parent::__construct($id, $meta, $name);
+	}
 
-		$entity->spawnToAll();
-		if($player->isSurvival()){
-			$this->count--;
-		}
-		return true;
+	public function getMaxStackSize(): int{
+		return 1;
+	}
+
+	public function isValid():bool{
+		return ($this->getId() >= 500 && $this->getId() <= 511);
+	}
+
+	public function getRecordId(): int{
+		return 1756 + $this->getId(); // so that it matches the wiki...
+	}
+
+	public function getSoundId(){
+		// see LevelSoundEventPacket L#125-136
+		return 90 + ($this->getRecordId() - 2255);
+	}
+
+	public function getRecordName(): string{
+		$names = [
+			Item::RECORD_13      => "13",
+			Item::RECORD_CAT     => "cat",
+			Item::RECORD_BLOCKS  => "blocks",
+			Item::RECORD_CHIRP   => "chirp",
+			Item::RECORD_FAR     => "far",
+			Item::RECORD_MALL    => "mall",
+			Item::RECORD_MELLOHI => "mellohi",
+			Item::RECORD_STAL    => "stal",
+			Item::RECORD_STRAD   => "strad",
+			Item::RECORD_WARD    => "ward",
+			Item::RECORD_11      => "11",
+			Item::RECORD_WAIT    => "wait",
+		];
+
+		return $names[$this->getId()];
 	}
 }

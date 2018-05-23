@@ -35,21 +35,10 @@ declare(strict_types = 1);
 
 namespace pocketmine\item;
 
-use pocketmine\block\Block;
-use pocketmine\entity\Entity;
-use pocketmine\item\Minecart as PMMinecart;
-use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\item\Item;
 
-class Minecart extends PMMinecart {
-	public function onActivate(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector): bool{
-		$level = $player->getLevel();
-		$entity = Entity::createEntity(Entity::MINECART, $level, Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5)));
-
-		$entity->spawnToAll();
-		if($player->isSurvival()){
-			$this->count--;
-		}
-		return true;
+class EyeOfEnder extends Item {
+	public function __construct($meta = 0){
+		parent::__construct(self::ENDER_EYE, $meta, "Eye Of Ender");
 	}
 }

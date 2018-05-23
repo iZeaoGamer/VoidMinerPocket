@@ -33,23 +33,41 @@
 
 declare(strict_types = 1);
 
-namespace pocketmine\item;
+namespace pocketmine\item\utils;
 
-use pocketmine\block\Block;
-use pocketmine\entity\Entity;
-use pocketmine\item\Minecart as PMMinecart;
-use pocketmine\math\Vector3;
-use pocketmine\Player;
 
-class Minecart extends PMMinecart {
-	public function onActivate(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector): bool{
-		$level = $player->getLevel();
-		$entity = Entity::createEntity(Entity::MINECART, $level, Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5)));
+class FireworksExplosion {
+	public const TYPE_SMALL_BALL = 0;
+	public const TYPE_LARGE_BALL = 1;
+	public const TYPE_STAR_SHAPED = 2;
+	public const TYPE_CREEPER_SHAPED = 3;
+	public const TYPE_BURST = 4;
+	
+	public const COLOR_BLACK = 0;
+	public const COLOR_RED = 1;
+	public const COLOR_GREEN = 2;
+	public const COLOR_BROWN = 3;
+	public const COLOR_BLUE = 4;
+	public const COLOR_PURPLE = 5;
+	public const COLOR_CYAN = 6;
+	public const COLOR_LIGHT_GRAY = 7;
+	public const COLOR_GRAY = 8;
+	public const COLOR_PINK = 9;
+	public const COLOR_LIME = 10;
+	public const COLOR_YELLOW = 11;
+	public const COLOR_LIGHT_BLUE = 12;
+	public const COLOR_MAGENTA = 13;
+	public const COLOR_ORANGE = 14;
+	public const COLOR_WHITE = 15;
 
-		$entity->spawnToAll();
-		if($player->isSurvival()){
-			$this->count--;
-		}
-		return true;
-	}
+	/** @var int[] */
+	public $fireworkColor = [self::COLOR_BLACK, self::COLOR_BLACK, self::COLOR_BLACK];
+	/** @var int[] */
+	public $fireworkFade = [self::COLOR_BLACK, self::COLOR_BLACK, self::COLOR_BLACK];
+	/** @var bool */
+	public $fireworkFlicker = false;
+	/** @var bool */
+	public $fireworkTrail = false;
+	/** @var int */
+	public $fireworkType = self::TYPE_SMALL_BALL;
 }
