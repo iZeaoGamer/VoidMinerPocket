@@ -14,9 +14,8 @@ declare(strict_types = 1);
 
 namespace CortexPE\block;
 
-use CortexPE\inventory\BeaconInventory;
-use CortexPE\Main;
-use CortexPE\tile\{
+use pocketmine\inventory\BeaconInventory;
+use pocketmine\tile\{
 	Beacon as TileBeacon, Tile
 };
 use pocketmine\block\{
@@ -108,7 +107,6 @@ class Beacon extends Transparent {
 	 * @return bool
 	 */
 	public function onActivate(Item $item, Player $player = null): bool{
-		if(Main::$beaconEnabled){
 			if(!$player instanceof Player) return false;
 			/** @var Tile $t */
 			$t = $this->getLevel()->getTile($this);
