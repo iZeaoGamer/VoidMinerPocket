@@ -33,7 +33,7 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\block;
+namespace pocketmine\block;
 
 use pocketmine\block\{
 	Block, Solid
