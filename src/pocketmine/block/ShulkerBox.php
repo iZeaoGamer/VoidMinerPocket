@@ -33,10 +33,9 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\block;
+namespace pocketmine\block;
 
-use CortexPE\Main;
-use CortexPE\tile\{
+use pocketmine\tile\{
 	ShulkerBox as TileShulkerBox, Tile
 };
 use pocketmine\block\{
@@ -146,7 +145,6 @@ class ShulkerBox extends Transparent {
 	 * @return bool
 	 */
 	public function onActivate(Item $item, Player $player = null): bool{
-		if(Main::$shulkerBoxEnabled){
 			if(!$player instanceof Player) return false;
 			$t = $this->getLevel()->getTile($this);
 			$sb = null;
@@ -158,9 +156,6 @@ class ShulkerBox extends Transparent {
 				$sb = Tile::createTile(Tile::SHULKER_BOX, $this->getLevel(), $nbt);
 			}
 			if(!($this->getSide(Vector3::SIDE_UP)->isTransparent()) or ($sb->namedtag->hasTag("Lock", StringTag::class) and $sb->namedtag->getString("Lock") !== $item->getCustomName())){
-				return true;
-			}
-			if($player->isCreative() and Main::$limitedCreative){
 				return true;
 			}
 			$player->addWindow($sb->getInventory());
