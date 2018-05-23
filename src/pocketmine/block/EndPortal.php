@@ -33,10 +33,9 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\block;
+namespace pocketmine\block;
 
-use CortexPE\Main;
-use CortexPE\task\DelayedCrossDimensionTeleportTask;
+use pocketmine\task\DelayedCrossDimensionTeleportTask;
 use pocketmine\block\{
 	Block, Solid
 };
@@ -112,7 +111,6 @@ class EndPortal extends Solid {
 	 *
 	 */
 	public function onEntityCollide(Entity $entity): void{
-		if(Main::$registerDimensions){
 			if($entity->getLevel()->getSafeSpawn()->distance($entity->asVector3()) <= 0.1){
 				return;
 			}
