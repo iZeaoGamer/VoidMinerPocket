@@ -85,10 +85,9 @@ declare(strict_types = 1);
 
 namespace CortexPE\block;
 
-use CortexPE\entity\mob\IronGolem;
-use CortexPE\entity\mob\SnowGolem;
-use CortexPE\Main;
-use CortexPE\utils\EntityUtils;
+use pocketmine\entity\mob\IronGolem;
+use pocketmine\entity\mob\SnowGolem;
+use pocketmine\utils\EntityUtils;
 use pocketmine\block\Air;
 use pocketmine\block\Block;
 use pocketmine\block\LitPumpkin as PMLitPumpkin;
@@ -102,7 +101,6 @@ class LitPumpkin extends PMLitPumpkin {
 		$parent = parent::place($item, $blockReplace, $blockClicked, $face, $clickVector, $player);
 		if($player instanceof Player){
 			$level = $this->getLevel();
-			if(Main::$enableSnowGolemStructures){
 				if(EntityUtils::checkSnowGolemStructure($this)[0]){
 					$level->setBlock($this, new Air());
 					$level->setBlock($this->subtract(0, 1), new Air());
