@@ -33,10 +33,10 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\entity\object;
+namespace pocketmine\entity\object;
 
 
-use CortexPE\utils\ArmorTypes;
+use pocketmine\utils\ArmorTypes;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
