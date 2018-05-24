@@ -33,9 +33,9 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\task;
+namespace pocketmine\scheduler;
 
-use CortexPE\level\particle\RocketParticle;
+use pocketmine\level\particle\RocketParticle;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\scheduler\PluginTask;
