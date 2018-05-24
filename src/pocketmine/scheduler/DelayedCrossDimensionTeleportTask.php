@@ -79,7 +79,7 @@ class DelayedCrossDimensionTeleportTask extends PluginTask {
 		$this->player->sendPlayStatus(PlayStatusPacket::PLAYER_SPAWN);
 		$this->player->teleport($this->position);
 
-		unset(Main::$onPortal[$this->player->getId()]);
+		unset([$this->player->getId()]);
 
 		return true;
 	}
