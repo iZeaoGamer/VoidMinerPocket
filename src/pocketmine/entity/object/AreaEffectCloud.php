@@ -20,7 +20,7 @@
 
 // Modded by @CortexPE to add Multi-Effects
 
-namespace CortexPE\entity\object;
+namespace pocketmine\entity\object;
 
 use pocketmine\entity\EffectInstance;
 use pocketmine\entity\Entity;
