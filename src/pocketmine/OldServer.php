@@ -318,7 +318,7 @@ class Server{
 	 * @return string
 	 */
 	public function getName(){
-		return "PocketMine-Steadfast";
+		return "VoidMinerPocket";
 	}
 
 	/**
