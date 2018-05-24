@@ -33,11 +33,9 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\task;
+namespace pocketmine\task;
 
-use CortexPE\{
-	Main, Utils
-};
+use pocketmine\Utils;
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\{
 	ChangeDimensionPacket, PlayStatusPacket
@@ -69,7 +67,7 @@ class DelayedCrossDimensionTeleportTask extends PluginTask {
 
 	public function onRun(int $currentTick){
 		if(Utils::isDelayedTeleportCancellable($this->player, $this->dimension)){
-			unset(Main::$onPortal[$this->player->getId()]);
+			unset([$this->player->getId()]);
 
 			return false;
 		}
