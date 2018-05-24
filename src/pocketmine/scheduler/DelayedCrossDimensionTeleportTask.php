@@ -33,7 +33,7 @@
 
 declare(strict_types = 1);
 
-namespace pocketmine\task;
+namespace pocketmine\scheduler;
 
 use pocketmine\Utils;
 use pocketmine\math\Vector3;
