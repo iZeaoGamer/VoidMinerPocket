@@ -33,9 +33,8 @@
 
 declare(strict_types = 1);
 
-namespace CortexPE\entity\object;
+namespace pocketmine\entity\object;
 
-use CortexPE\Main;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\level\Explosion;
@@ -86,7 +85,7 @@ class EndCrystal extends Entity {
 			}
 			$pos = clone $this->asPosition();
 			$this->close();
-			$explode = new Explosion($pos, Main::$endCrystalPower, $this);
+			$explode = new Explosion($pos, $this);
 			$explode->explodeA();
 			$explode->explodeB();
 		}
