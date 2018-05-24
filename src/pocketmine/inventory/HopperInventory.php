@@ -35,10 +35,29 @@ declare(strict_types = 1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\inventory\AnvilInventory as PMAnvilInventory;
 
-class AnvilInventory extends PMAnvilInventory {
+use pocketmine\tile\Hopper;
+use pocketmine\inventory\ContainerInventory;
+use pocketmine\network\mcpe\protocol\types\WindowTypes;
+
+class HopperInventory extends ContainerInventory {
+	public function __construct(Hopper $tile){
+		parent::__construct($tile);
+	}
+
+	public function getHolder(){
+		return $this->holder;
+	}
+
 	public function getDefaultSize(): int{
-		return 3;
+		return 5;
+	}
+
+	public function getNetworkType(): int{
+		return WindowTypes::HOPPER;
+	}
+
+	public function getName(): string{
+		return "Hopper";
 	}
 }
