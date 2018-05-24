@@ -54,7 +54,7 @@ class EndCrystal extends Item {
 		if(in_array($blockClicked->getId(), [Block::OBSIDIAN, Block::BEDROCK])){
 			$nbt = Entity::createBaseNBT($blockReplace->add(0.5, 0, 0.5));
 			$crystal = Entity::createEntity("EnderCrystal", $player->getLevel(), $nbt);
-			if($crystal instanceof \CortexPE\entity\object\EndCrystal){
+			if($crystal instanceof \pocketmine\entity\object\EndCrystal){
 				$crystal->spawnToAll();
 				if($player->isSurvival()){
 					--$this->count;
