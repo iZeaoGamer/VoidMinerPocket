@@ -3,7 +3,7 @@ A customised MCPE server software for The Void network (An MCPE network).
 
 
 ## Features we plan on adding
-* Support multiple versions (From v1.1.x - v1.2.16.
+* Support multiple versions (From v1.1.x - Latest PMMP version.
 
 * Add a lot of items from TeaSpoon!
 
@@ -27,6 +27,8 @@ A customised MCPE server software for The Void network (An MCPE network).
 
 * GeniAPI
 
+* Implement Minecarts.
+
 * And so much more to come!
 
 
@@ -39,4 +41,4 @@ A customised MCPE server software for The Void network (An MCPE network).
 
 ## NOTICE
 
-# This server software may currently be unuseable, ex: Bugs may rise, issues may occurr, or the server software may not even work correctly. So use it at your own risk. We will update this post once we think it's stabled again.
+# This server software may currently be unstabled, ex: Bugs may rise, issues may occur, or the server software may not even work correctly. So use it at your own risk. We will update this post once we think it's stabled again.
