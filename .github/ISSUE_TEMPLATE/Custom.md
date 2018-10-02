@@ -18,4 +18,4 @@ about: Issue
 
 ## Actual results
 
-## When did this started happening? What Pocketmine build - Talking about this build.
+## When did this start happening? What Pocketmine build - Talking about this build.
